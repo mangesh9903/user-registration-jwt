@@ -3,3 +3,90 @@
 2022-06-10 13:46:05.308  INFO 23024 --- [main] c.b.u.UserRegistrationJwtApplication     : The following 1 profile is active: "dev"
 2022-06-10 13:46:06.995  WARN 23024 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2022-06-10 13:46:07.236  INFO 23024 --- [main] c.b.u.UserRegistrationJwtApplication     : Started UserRegistrationJwtApplication in 2.37 seconds (JVM running for 3.642)
+2022-06-10 16:13:09.723  INFO 29288 --- [main] c.b.u.UserRegistrationJwtApplication     : Starting UserRegistrationJwtApplication using Java 1.8.0_181 on LAPTOP-PUULM6OO with PID 29288 (C:\Users\Mangesh\IdeaProjects\user-registration-jwt\target\classes started by Mangesh in C:\Users\Mangesh\IdeaProjects\user-registration-jwt)
+2022-06-10 16:13:09.725 DEBUG 29288 --- [main] c.b.u.UserRegistrationJwtApplication     : Running with Spring Boot v2.7.0, Spring v5.3.20
+2022-06-10 16:13:09.726  INFO 29288 --- [main] c.b.u.UserRegistrationJwtApplication     : The following 1 profile is active: "dev"
+2022-06-10 16:13:12.730 ERROR 29288 --- [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.RuntimeException: Driver com.mysql.jdbc.Driver claims to not accept jdbcUrl, ${db_url}
+2022-06-10 16:13:12.732  WARN 29288 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.RuntimeException: Driver com.mysql.jdbc.Driver claims to not accept jdbcUrl, ${db_url}
+2022-06-10 16:13:12.780 ERROR 29288 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.RuntimeException: Driver com.mysql.jdbc.Driver claims to not accept jdbcUrl, ${db_url}
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.20.jar:5.3.20]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.20.jar:5.3.20]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.20.jar:5.3.20]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) [spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) [spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) [spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) [spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) [spring-boot-2.7.0.jar:2.7.0]
+	at com.bridgelabz.userregistrationjwt.UserRegistrationJwtApplication.main(UserRegistrationJwtApplication.java:19) [classes/:na]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.RuntimeException: Driver com.mysql.jdbc.Driver claims to not accept jdbcUrl, ${db_url}
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.20.jar:5.3.20]
+	... 16 common frames omitted
+Caused by: java.lang.RuntimeException: Driver com.mysql.jdbc.Driver claims to not accept jdbcUrl, ${db_url}
+	at com.zaxxer.hikari.util.DriverDataSource.<init>(DriverDataSource.java:110) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.initializeDataSource(PoolBase.java:331) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.<init>(PoolBase.java:114) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:108) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-4.0.3.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:44) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:63) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcDatabaseMetaData(ImprovedExtractionContextImpl.java:70) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.extract.internal.InformationExtractorJdbcDatabaseMetaDataImpl.processTableResultSet(InformationExtractorJdbcDatabaseMetaDataImpl.java:64) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.extract.internal.AbstractInformationExtractorImpl.getTables(AbstractInformationExtractorImpl.java:559) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.getTablesInformation(DatabaseInformationImpl.java:122) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:68) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:220) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:123) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:196) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.20.jar:5.3.20]
+	... 20 common frames omitted
+
+2022-06-10 16:16:09.150  INFO 25392 --- [main] c.b.u.UserRegistrationJwtApplication     : Starting UserRegistrationJwtApplication using Java 1.8.0_181 on LAPTOP-PUULM6OO with PID 25392 (C:\Users\Mangesh\IdeaProjects\user-registration-jwt\target\classes started by Mangesh in C:\Users\Mangesh\IdeaProjects\user-registration-jwt)
+2022-06-10 16:16:09.154 DEBUG 25392 --- [main] c.b.u.UserRegistrationJwtApplication     : Running with Spring Boot v2.7.0, Spring v5.3.20
+2022-06-10 16:16:09.155  INFO 25392 --- [main] c.b.u.UserRegistrationJwtApplication     : The following 1 profile is active: "dev"
+2022-06-10 16:16:12.061  WARN 25392 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-10 16:16:12.622  INFO 25392 --- [main] c.b.u.UserRegistrationJwtApplication     : Started UserRegistrationJwtApplication in 3.908 seconds (JVM running for 4.743)
+2022-06-10 16:16:12.625  INFO 25392 --- [main] c.b.u.UserRegistrationJwtApplication     :   User Registration Jwt App Started
+2022-06-10 16:16:12.627  INFO 25392 --- [main] c.b.u.UserRegistrationJwtApplication     : User Registration Jwt DB User is root 
+2022-06-10 16:20:19.745  INFO 4484 --- [main] c.b.u.UserRegistrationJwtApplication     : Starting UserRegistrationJwtApplication using Java 1.8.0_181 on LAPTOP-PUULM6OO with PID 4484 (C:\Users\Mangesh\IdeaProjects\user-registration-jwt\target\classes started by Mangesh in C:\Users\Mangesh\IdeaProjects\user-registration-jwt)
+2022-06-10 16:20:19.749 DEBUG 4484 --- [main] c.b.u.UserRegistrationJwtApplication     : Running with Spring Boot v2.7.0, Spring v5.3.20
+2022-06-10 16:20:19.749  INFO 4484 --- [main] c.b.u.UserRegistrationJwtApplication     : The following 1 profile is active: "dev"
+2022-06-10 16:20:22.912  WARN 4484 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-10 16:20:23.518  INFO 4484 --- [main] c.b.u.UserRegistrationJwtApplication     : Started UserRegistrationJwtApplication in 4.249 seconds (JVM running for 5.224)
+2022-06-10 16:20:23.525  INFO 4484 --- [main] c.b.u.UserRegistrationJwtApplication     :   User Registration Jwt App Started
+2022-06-10 16:20:23.528  INFO 4484 --- [main] c.b.u.UserRegistrationJwtApplication     : User Registration Jwt DB User is root 
+2022-06-10 16:41:59.975  INFO 2324 --- [main] c.b.u.UserRegistrationJwtApplication     : Starting UserRegistrationJwtApplication using Java 1.8.0_181 on LAPTOP-PUULM6OO with PID 2324 (C:\Users\Mangesh\IdeaProjects\user-registration-jwt\target\classes started by Mangesh in C:\Users\Mangesh\IdeaProjects\user-registration-jwt)
+2022-06-10 16:41:59.979 DEBUG 2324 --- [main] c.b.u.UserRegistrationJwtApplication     : Running with Spring Boot v2.7.0, Spring v5.3.20
+2022-06-10 16:41:59.980  INFO 2324 --- [main] c.b.u.UserRegistrationJwtApplication     : The following 1 profile is active: "dev"
+2022-06-10 16:42:03.222  WARN 2324 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-10 16:42:03.820  INFO 2324 --- [main] c.b.u.UserRegistrationJwtApplication     : Started UserRegistrationJwtApplication in 4.318 seconds (JVM running for 5.286)
+2022-06-10 16:42:03.824  INFO 2324 --- [main] c.b.u.UserRegistrationJwtApplication     :   User Registration Jwt App Started
+2022-06-10 16:42:03.826  INFO 2324 --- [main] c.b.u.UserRegistrationJwtApplication     : User Registration Jwt DB User is root 
+2022-06-10 16:48:24.022  INFO 22476 --- [main] c.b.u.UserRegistrationJwtApplication     : Starting UserRegistrationJwtApplication using Java 1.8.0_181 on LAPTOP-PUULM6OO with PID 22476 (C:\Users\Mangesh\IdeaProjects\user-registration-jwt\target\classes started by Mangesh in C:\Users\Mangesh\IdeaProjects\user-registration-jwt)
+2022-06-10 16:48:24.026 DEBUG 22476 --- [main] c.b.u.UserRegistrationJwtApplication     : Running with Spring Boot v2.7.0, Spring v5.3.20
+2022-06-10 16:48:24.027  INFO 22476 --- [main] c.b.u.UserRegistrationJwtApplication     : The following 1 profile is active: "dev"
+2022-06-10 16:48:27.281  WARN 22476 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-10 16:48:27.878  INFO 22476 --- [main] c.b.u.UserRegistrationJwtApplication     : Started UserRegistrationJwtApplication in 4.319 seconds (JVM running for 5.284)
+2022-06-10 16:48:27.883  INFO 22476 --- [main] c.b.u.UserRegistrationJwtApplication     :   User Registration Jwt App Started
+2022-06-10 16:48:27.884  INFO 22476 --- [main] c.b.u.UserRegistrationJwtApplication     : User Registration Jwt DB User is root 
