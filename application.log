@@ -1,0 +1,5 @@
+2022-06-10 13:46:05.302  INFO 23024 --- [main] c.b.u.UserRegistrationJwtApplication     : Starting UserRegistrationJwtApplication using Java 1.8.0_181 on LAPTOP-PUULM6OO with PID 23024 (C:\Users\Mangesh\IdeaProjects\user-registration-jwt\target\classes started by Mangesh in C:\Users\Mangesh\IdeaProjects\user-registration-jwt)
+2022-06-10 13:46:05.307 DEBUG 23024 --- [main] c.b.u.UserRegistrationJwtApplication     : Running with Spring Boot v2.7.0, Spring v5.3.20
+2022-06-10 13:46:05.308  INFO 23024 --- [main] c.b.u.UserRegistrationJwtApplication     : The following 1 profile is active: "dev"
+2022-06-10 13:46:06.995  WARN 23024 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-10 13:46:07.236  INFO 23024 --- [main] c.b.u.UserRegistrationJwtApplication     : Started UserRegistrationJwtApplication in 2.37 seconds (JVM running for 3.642)
