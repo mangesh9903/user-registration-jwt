@@ -10,7 +10,12 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
+/***********************************************************************************************************************
+ * Class : Global Exception Class.
+ * @author : Mangesh
+ * @since : 12-06-2022
+ *
+ **********************************************************************************************************************/
 @ControllerAdvice
 public class UserExceptionalHandler {
     private static final String MESSAGE = "Exception while processing REST Request";

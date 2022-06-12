@@ -1,27 +1,21 @@
 package com.bridgelabz.userregistrationjwt.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.ToString;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 /***********************************************************************************************************************
- * Class : User DTO Class.
+ * Class : User Login DTO Class.
  * @author : Mangesh
  * @since : 12-06-2022
  *
  **********************************************************************************************************************/
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
-@ToString
-public class UserDTO {
-
-    @Pattern(regexp = "^[A-Z]{1}[a-z]{2,}$",message = "First Name is Invalid!, Please Enter Valid First Name.")
-    @NotEmpty(message = "First Name cannot be Empty")
-    public String firstName;
-
-    @Pattern(regexp = "^[A-Z]{1}[a-z]{2,}$",message = "Last Name is Invalid!, Please Enter Valid Last Name.")
-    @NotEmpty(message = "Last Name cannot be Empty")
-    public String lastName;
+public class UserLoginDTO {
 
     @Pattern(regexp ="^[a-z0-9]{1,}[.]{0,1}[a-zA-Z0-9]{0,}+@[a-zA-Z0-9]+.[a-zA-Z]{2,3}[.]{0,1}[a-zA-Z]{0,2}$"
             ,message = "Email Address is Invalid!, Please Enter Valid Email Address.")
@@ -29,7 +23,8 @@ public class UserDTO {
     public String email;
 
     @Pattern(regexp = "^(?=.*[0-9])" + "(?=.*[a-z])(?=.*[A-Z])" + "(?=.*[@\\-#$%^&+=])" + "(?=\\S+$).{8,}$",
-    message = "Password is Invalid!, Please Enter Valid Password.")
+            message = "Password is Invalid!, Please Enter Valid Password.")
     @NotEmpty(message = "Password cannot be Empty")
     public String password;
+
 }
